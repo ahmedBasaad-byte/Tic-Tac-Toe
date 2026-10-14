@@ -23,7 +23,7 @@ const Gameboard = (() => {
     }
     function placeMark(index, marker) {
             gameState[index] = marker;
-}
+    }
     function isCellEmpty(index) {
             return gameState[index] === '';
         }
@@ -96,14 +96,14 @@ const GameController = (() => {
         const winner = Gameboard.checkWinner();
         if (winner) {
             gameActive = false;
-            DisplayContent.showMessage(`${currentPlayer.name} wins!`);
+            DisplayContent.Result(`${currentPlayer.name} wins!`);
             DisplayContent.addScore(currentPlayer);
             return;
         }
 
         if (Gameboard.checkTie()) {
             gameActive = false;
-            DisplayContent.showMessage("It's a tie!");
+            DisplayContent.Result("It's a tie!");
             return;
         }
         
@@ -149,6 +149,12 @@ const DisplayContent = (() => {
             player2score.textContent = parseInt(player2score.textContent) + 1;
         }
     }
+
+    function Result(message) {
+        const resultDisplay = document.querySelector('.result');
+        resultDisplay.textContent = `Result is: ${message}`;
+        
+    }
     function renderBoard() {
         const board = Gameboard.getBoard();
         cells.forEach((cell, index) => {
@@ -163,6 +169,7 @@ const DisplayContent = (() => {
     });
         });
     return {
+        Result,
         renderBoard,
         showMessage,
         addScore

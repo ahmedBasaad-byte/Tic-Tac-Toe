@@ -97,3 +97,18 @@ button:hover {
     color:rgb(255, 129, 32);
     background-color: white;
 }
+
+.current-player , .result{
+    font-size: 1.2rem;
+    margin: 5px;
+    color: #333;
+}
+
+.buttons { 
+    display: flex; gap: 15px; 
+}
+
+span.marker ,span.score {
+    font-size: 1.2rem;
+    font-family:monospace
+}
