@@ -137,7 +137,7 @@ const DisplayContent = (() => {
     resetButton.addEventListener('click', () => {
         GameController.restartGame();
     }); 
-    
+
     function showMessage(message) {
         currentPlayerDisplay.textContent = message;
     }
@@ -171,5 +171,5 @@ const DisplayContent = (() => {
 
 
 
-
+GameController.startGame(p1, p2);
  
