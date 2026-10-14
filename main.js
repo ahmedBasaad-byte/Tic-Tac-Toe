@@ -1,7 +1,6 @@
 const Player = (name,marker) => {
     return { name, marker };
 };
-
 const p1 = Player('Player 1', 'X');
 const p2 = Player('Player 2', 'O');
 
@@ -104,6 +103,7 @@ const GameController = (() => {
         if (Gameboard.checkTie()) {
             gameActive = false;
             DisplayContent.Result("It's a tie!");
+        nameDialog.style.display = 'none';
             return;
         }
         
@@ -178,5 +178,35 @@ const DisplayContent = (() => {
 
 
 
-GameController.startGame(p1, p2);
+const nameDialog = document.querySelector('#name-dialog');
+nameDialog.addEventListener('submit', (e) => {
+    const player1Name = document.querySelector('#player1-name').value.trim();
+    const player2Name = document.querySelector('#player2-name').value.trim();
+
+    if (player1Name && player2Name) {
+        p1.name = player1Name;
+        p2.name = player2Name;
+        document.querySelector('#player1 .name').textContent = p1.name;
+        document.querySelector('#player2 .name').textContent = p2.name;
+    } else {
+        alert('Please enter names for both players.');
+    }
+});
+
+const nameDialog = document.querySelector('#name-dialog');
+nameDialog.addEventListener('submit', (e) => {
+    const player1Name = document.querySelector('#player1-name').value.trim();
+    const player2Name = document.querySelector('#player2-name').value.trim();
+
+    if (player1Name && player2Name) {
+        p1.name = player1Name;
+        p2.name = player2Name;
+        document.querySelector('#player1 .name').textContent = p1.name;
+        document.querySelector('#player2 .name').textContent = p2.name;
+    } else {
+        alert('Please enter names for both players.');
+    }
+});
+nameDialog.close()
+
  
