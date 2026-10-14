@@ -34,10 +34,22 @@
             <div class="cells" id="cell8"> </div>
         </div>
         <div class="buttons">
-            <button id="reset">reset</button>
-            <button id="start">new game</button>
+            <button id="reset">restart</button>
         </div>
     </div>
+    <dialog id="name-dialog">
+    <form method="dialog">
+        <h2>Enter Player Names</h2>
+
+        <label for="p1-name">Player 1 (X):</label>
+        <input type="text" id="p1-name" value="Player 1" placeholder="Player 1" autofocus>
+
+        <label for="p2-name">Player 2 (O):</label>
+        <input type="text" id="p2-name" value="Player 2" placeholder="Player 2">
+
+        <button type="submit">Start Game</button>
+    </form>
+</dialog>
 <script src="main.js"></script>
 </body>
 </html>
